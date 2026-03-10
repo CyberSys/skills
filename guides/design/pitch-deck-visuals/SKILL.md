@@ -210,3 +210,4 @@ npx skills add inference-sh/skills@ai-image-generation
 ```
 
 Browse all apps: `infsh app list`
+

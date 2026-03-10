@@ -265,3 +265,4 @@ npx skills add inference-sh/skills@agent-tools
 ```
 
 Browse all image apps: `infsh app list --category image`
+

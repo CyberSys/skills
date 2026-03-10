@@ -272,3 +272,4 @@ npx skills add inference-sh/skills@agent-tools
 ```
 
 Browse audio apps: `infsh app list --category audio`
+

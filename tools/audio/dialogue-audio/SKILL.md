@@ -220,3 +220,4 @@ npx skills add inference-sh/skills@ai-avatar-video
 ```
 
 Browse all apps: `infsh app list`
+

@@ -294,3 +294,4 @@ npx skills add inference-sh/skills@og-image-design
 ```
 
 Browse all apps: `infsh app list`
+

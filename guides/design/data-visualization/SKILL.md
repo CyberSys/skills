@@ -209,3 +209,4 @@ npx skills add inference-sh/skills@competitor-teardown
 ```
 
 Browse all apps: `infsh app list`
+

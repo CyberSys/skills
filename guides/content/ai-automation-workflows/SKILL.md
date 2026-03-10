@@ -403,3 +403,4 @@ npx skills add inference-sh/skills@agent-tools
 ```
 
 Browse all apps: `infsh app list`
+

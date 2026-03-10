@@ -214,3 +214,4 @@ npx skills add inference-sh/skills@linkedin-content
 ```
 
 Browse all apps: `infsh app list`
+

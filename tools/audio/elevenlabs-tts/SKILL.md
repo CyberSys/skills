@@ -187,7 +187,10 @@ npx skills add inference-sh/skills@elevenlabs-voice-changer
 # ElevenLabs sound effects
 npx skills add inference-sh/skills@elevenlabs-sound-effects
 
-# All TTS models (Kokoro, DIA, Chatterbox, and more)
+# Inworld TTS (100+ languages, emotion steering, character voices)
+npx skills add inference-sh/skills@text-to-speech
+
+# All TTS models (Kokoro, DIA, Chatterbox, Inworld, and more)
 npx skills add inference-sh/skills@text-to-speech
 
 # Full platform skill (all 250+ apps)

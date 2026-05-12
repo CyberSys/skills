@@ -1,6 +1,6 @@
 ---
 name: text-to-speech
-description: "Convert text to natural speech with ElevenLabs, DIA TTS, Kokoro, Chatterbox, and more via inference.sh CLI. Models: ElevenLabs (premium, 22+ voices, 32 languages), DIA TTS (conversational), Kokoro TTS, Chatterbox, Higgs Audio, VibeVoice (podcasts). Capabilities: text-to-speech, voice cloning, multi-speaker dialogue, podcast generation, expressive speech. Use for: voiceovers, audiobooks, podcasts, accessibility, video narration, IVR, voice assistants. Triggers: text to speech, tts, voice generation, ai voice, speech synthesis, voice over, generate speech, ai narrator, voice cloning, text to audio, elevenlabs, eleven labs, voice ai, ai voiceover, speech generator, natural voice"
+description: "Convert text to natural speech with Inworld TTS, ElevenLabs, DIA TTS, Kokoro, Chatterbox, and more via inference.sh CLI. Models: Inworld TTS-2 (100+ languages, emotion steering), Inworld TTS 1.5 (ultra-low latency), ElevenLabs (premium, 22+ voices, 32 languages), DIA TTS (conversational), Kokoro TTS, Chatterbox, Higgs Audio, VibeVoice (podcasts). Capabilities: text-to-speech, voice cloning, multi-speaker dialogue, podcast generation, expressive speech, emotion/delivery steering, character voices. Use for: voiceovers, audiobooks, podcasts, accessibility, video narration, IVR, voice assistants, gaming characters, avatar audio. Triggers: text to speech, tts, voice generation, ai voice, speech synthesis, voice over, generate speech, ai narrator, voice cloning, text to audio, elevenlabs, eleven labs, voice ai, ai voiceover, speech generator, natural voice, inworld, inworld tts, character voice, game voice, npc voice"
 allowed-tools: Bash(belt *)
 ---
 
@@ -26,6 +26,9 @@ belt app run infsh/kokoro-tts --input '{"text": "Hello, welcome to our product d
 
 | Model | App ID | Best For |
 |-------|--------|----------|
+| **Inworld TTS-2** | `inworld/text-to-speech-2` | **100+ languages, emotion steering with [brackets], delivery modes** |
+| Inworld TTS 1.5 Max | `inworld/text-to-speech-1-5-max` | Low latency (<200ms), 15 languages |
+| Inworld TTS 1.5 Mini | `inworld/text-to-speech-1-5-mini` | Ultra-low latency (~120ms), 15 languages |
 | ElevenLabs TTS | `elevenlabs/tts` | Premium quality, 22+ voices, 32 languages |
 | DIA TTS | `infsh/dia-tts` | Conversational, expressive |
 | Kokoro TTS | `infsh/kokoro-tts` | Fast, natural |
@@ -45,6 +48,38 @@ belt app list --category audio
 
 ```bash
 belt app run infsh/kokoro-tts --input '{"text": "Welcome to our tutorial."}'
+```
+
+### Inworld TTS-2 — Emotion Steering
+
+Inworld TTS-2 supports natural-language steering with `[brackets]` — control emotion, volume, speed, and non-verbals inline with text:
+
+```bash
+belt app run inworld/text-to-speech-2 --input '{
+  "text": "I have some [exciting] news to share with you! [pause] We just hit one million users. [laugh]",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "delivery_mode": "CREATIVE"
+}'
+```
+
+Delivery modes: `STABLE` (consistent), `BALANCED` (natural, default), `CREATIVE` (expressive).
+
+### Inworld TTS 1.5 — Low Latency
+
+For real-time applications where speed matters:
+
+```bash
+# Max quality at low latency (<200ms)
+belt app run inworld/text-to-speech-1-5-max --input '{
+  "text": "Welcome back! How can I help you today?",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb"
+}'
+
+# Ultra-low latency (~120ms) for conversational AI
+belt app run inworld/text-to-speech-1-5-mini --input '{
+  "text": "Sure, let me look that up for you.",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb"
+}'
 ```
 
 ### Conversational TTS with DIA
@@ -91,14 +126,31 @@ belt app run infsh/higgs-audio --input input.json
 - **Accessibility**: Make content accessible
 - **IVR**: Phone system voice prompts
 - **Video Narration**: Add narration to videos
+- **Gaming / NPCs**: Character voices with emotion steering (Inworld TTS-2)
+- **Conversational AI**: Ultra-low latency responses (Inworld TTS 1.5 Mini)
+- **Avatar / UGC Videos**: Generate speech for talking head avatars
 
 ## Combine with Video
 
-Generate speech, then create a talking head video:
+The easiest way to create a talking head video is P-Video-Avatar with built-in TTS — no separate audio step:
 
 ```bash
-# 1. Generate speech
-belt app run infsh/kokoro-tts --input '{"text": "Your script here"}' > speech.json
+belt app run pruna/p-video-avatar --input '{
+  "image": "https://portrait.jpg",
+  "voice_script": "Your script here",
+  "voice": "Zephyr (Female)"
+}'
+```
+
+For models without built-in TTS (OmniHuman, PixVerse), generate speech first:
+
+```bash
+# 1. Generate speech with Inworld TTS-2 (emotion steering)
+belt app run inworld/text-to-speech-2 --input '{
+  "text": "[friendly] Your script here. [excited] This is the best part!",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "delivery_mode": "CREATIVE"
+}' > speech.json
 
 # 2. Use the audio URL with OmniHuman for avatar video
 belt app run bytedance/omnihuman-1-5 --input '{

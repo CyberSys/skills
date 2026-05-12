@@ -1,6 +1,6 @@
 ---
 name: ai-voice-cloning
-description: "AI voice generation, text-to-speech, and voice synthesis via inference.sh CLI. Models: ElevenLabs (22+ premium voices, 32 languages), Kokoro TTS, DIA, Chatterbox, Higgs, VibeVoice for natural speech. Capabilities: multiple voices, emotions, accents, long-form narration, conversation, voice transformation. Use for: voiceovers, audiobooks, podcasts, video narration, accessibility. Triggers: voice cloning, tts, text to speech, ai voice, voice generation, voice synthesis, voice over, narration, speech synthesis, ai narrator, elevenlabs, eleven labs, natural voice, realistic speech, voice ai, voice changer"
+description: "AI voice generation, text-to-speech, and voice synthesis via inference.sh CLI. Models: Inworld TTS-2 (100+ languages, emotion/non-verbal steering), Inworld TTS 1.5 (ultra-low latency), ElevenLabs (22+ premium voices, 32 languages), Kokoro TTS, DIA, Chatterbox, Higgs, VibeVoice for natural speech. Capabilities: multiple voices, emotions, accents, long-form narration, conversation, voice transformation, delivery mode control, character voices. Use for: voiceovers, audiobooks, podcasts, video narration, accessibility, gaming NPCs, avatar audio, UGC. Triggers: voice cloning, tts, text to speech, ai voice, voice generation, voice synthesis, voice over, narration, speech synthesis, ai narrator, elevenlabs, eleven labs, natural voice, realistic speech, voice ai, voice changer, inworld, inworld tts, character voice, npc voice"
 allowed-tools: Bash(belt *)
 ---
 
@@ -29,6 +29,9 @@ belt app run infsh/kokoro-tts --input '{
 
 | Model | App ID | Best For |
 |-------|--------|----------|
+| **Inworld TTS-2** | `inworld/text-to-speech-2` | **100+ languages, emotion/non-verbal steering, delivery modes** |
+| Inworld TTS 1.5 Max | `inworld/text-to-speech-1-5-max` | Low latency (<200ms), 15 languages |
+| Inworld TTS 1.5 Mini | `inworld/text-to-speech-1-5-mini` | Ultra-low latency (~120ms), 15 languages, real-time |
 | ElevenLabs TTS | `elevenlabs/tts` | Premium quality, 22+ voices, 32 languages |
 | ElevenLabs Voice Changer | `elevenlabs/voice-changer` | Transform existing voice recordings |
 | Kokoro TTS | `infsh/kokoro-tts` | Natural, multiple voices |
@@ -58,6 +61,41 @@ belt app run infsh/kokoro-tts --input '{
 | `bf_isabella` | Female | Warm |
 | `bm_george` | Male | Classic |
 | `bm_lewis` | Male | Modern |
+
+## Inworld TTS — Character & Emotion Voices
+
+Inworld TTS-2 is purpose-built for character voices, gaming, and expressive speech. Use `[brackets]` inline for emotion, non-verbals, and delivery control:
+
+```bash
+# Expressive character voice with emotion steering
+belt app run inworld/text-to-speech-2 --input '{
+  "text": "[excited] Oh wow, you actually found the ancient artifact! [gasp] I cannot believe it... [whisper] We need to keep this between us.",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "delivery_mode": "CREATIVE"
+}'
+
+# Calm narrator with stable delivery
+belt app run inworld/text-to-speech-2 --input '{
+  "text": "The sun set behind the mountains, casting long shadows across the valley. A new chapter was about to begin.",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "delivery_mode": "STABLE"
+}'
+```
+
+**Delivery modes:** `STABLE` (consistent, narration), `BALANCED` (natural, default), `CREATIVE` (expressive, characters)
+
+**Steering examples:** `[laugh]`, `[sigh]`, `[whisper]`, `[excited]`, `[sad]`, `[angry]`, `[pause]`, `[gasp]`
+
+### Low-Latency for Real-Time / Conversational AI
+
+```bash
+# Ultra-fast response for chatbots & game NPCs (~120ms)
+belt app run inworld/text-to-speech-1-5-mini --input '{
+  "text": "Welcome, traveler. What brings you to our village?",
+  "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+  "speaking_rate": 0.9
+}'
+```
 
 ## Voice Generation Examples
 

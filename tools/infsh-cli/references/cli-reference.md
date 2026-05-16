@@ -18,20 +18,27 @@ curl -fsSL https://cli.inference.sh | sh
 
 ## App Commands
 
-### Discovery
+### Your Apps
 
 | Command | Description |
 |---------|-------------|
-| `belt app list` | List available apps |
-| `belt app list --category <cat>` | Filter by category (image, video, audio, text, other) |
-| `belt app search <query>` | Search apps |
-| `belt app list --search <query>` | Search apps (flag form) |
-| `belt app list --featured` | Show featured apps |
-| `belt app list --new` | Sort by newest |
-| `belt app list --page <n>` | Pagination |
+| `belt app list` | List your deployed apps |
+| `belt app list --search <query>` | Search your apps |
+| `belt app search <query>` | Search your apps (shortcut) |
 | `belt app list -l` | Detailed table view |
-| `belt app list --save <file>` | Save to JSON file |
-| `belt app my` | List your deployed apps |
+
+### Store (Public Apps)
+
+| Command | Description |
+|---------|-------------|
+| `belt app store` | Browse the public app store |
+| `belt app store --category <cat>` | Filter by category (image, video, audio, text, other) |
+| `belt app store search <query>` | Search the store |
+| `belt app store --featured` | Show featured apps |
+| `belt app store --new` | Sort by newest |
+| `belt app store --page <n>` | Pagination |
+| `belt app store -l` | Detailed table view |
+| `belt app store --save <file>` | Save to JSON file |
 | `belt app get <app>` | Get app details |
 | `belt app get <app> --json` | Get app details as JSON |
 

@@ -93,7 +93,7 @@ npx skills add inference-sh/skills@ai-image-generation
 npx skills add inference-sh/skills@image-upscaling
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 
 ## Documentation
 

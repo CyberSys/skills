@@ -231,5 +231,5 @@ npx skills add inference-sh/skills@content-repurposing
 npx skills add inference-sh/skills@twitter-thread-creation
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 

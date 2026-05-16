@@ -141,7 +141,7 @@ npx skills add inference-sh/skills@p-image
 npx skills add inference-sh/skills@text-to-speech
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 
 ## Documentation
 

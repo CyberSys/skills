@@ -81,7 +81,7 @@ belt app run google/veo-3-1-fast --input '{"prompt": "drone shot flying over a f
 ## Browse All Video Apps
 
 ```bash
-belt app list --category video
+belt app store --category video
 ```
 
 ## Examples
@@ -242,7 +242,7 @@ npx skills add inference-sh/skills@ai-image-generation
 npx skills add inference-sh/skills@twitter-automation
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 
 ## Documentation
 

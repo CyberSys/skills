@@ -1,60 +1,69 @@
 # Discovering Apps
 
-## List All Apps
+## Your Apps
 
 ```bash
 belt app list
+belt app list --search "flux"
+belt app search "flux"
+belt app list -l  # detailed
+```
+
+## Browse the Public Store
+
+```bash
+belt app store
 ```
 
 ## Pagination
 
 ```bash
-belt app list --page 2
+belt app store --page 2
 ```
 
 ## Filter by Category
 
 ```bash
-belt app list --category image
-belt app list --category video
-belt app list --category audio
-belt app list --category text
-belt app list --category other
+belt app store --category image
+belt app store --category video
+belt app store --category audio
+belt app store --category text
+belt app store --category other
 ```
 
-## Search
+## Search the Store
 
 ```bash
-belt app search "flux"
-belt app search "video generation"
-belt app search "tts" -l
-belt app search "image" --category image
+belt app store search "flux"
+belt app store search "video generation"
+belt app store search "tts" -l
+belt app store search "image" --category image
 ```
 
 Or use the flag form:
 
 ```bash
-belt app list --search "flux"
-belt app list --search "video generation"
-belt app list --search "tts"
+belt app store --search "flux"
+belt app store --search "video generation"
+belt app store --search "tts"
 ```
 
 ## Featured Apps
 
 ```bash
-belt app list --featured
+belt app store --featured
 ```
 
 ## Newest First
 
 ```bash
-belt app list --new
+belt app store --new
 ```
 
 ## Detailed View
 
 ```bash
-belt app list -l
+belt app store -l
 ```
 
 Shows table with app name, category, description, and featured status.
@@ -62,16 +71,7 @@ Shows table with app name, category, description, and featured status.
 ## Save to File
 
 ```bash
-belt app list --save apps.json
-```
-
-## Your Apps
-
-List apps you've deployed:
-
-```bash
-belt app my
-belt app my -l  # detailed
+belt app store --save apps.json
 ```
 
 ## Get App Details

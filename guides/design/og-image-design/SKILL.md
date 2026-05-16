@@ -217,5 +217,5 @@ npx skills add inference-sh/skills@landing-page-design
 npx skills add inference-sh/skills@prompt-engineering
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 

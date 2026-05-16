@@ -75,13 +75,13 @@ belt app sample user/app --save input.json
 
 ```bash
 # Your apps
-belt app my                       # List your deployed apps
-belt app my -l                    # Detailed list
+belt app list                     # List your deployed apps
+belt app list -l                  # Detailed list
 
 # Browse store
-belt app list                     # List available apps
-belt app list --featured          # Featured apps
-belt app list --category image    # Filter by category
+belt app store                    # Browse available apps
+belt app store --featured         # Featured apps
+belt app store --category image   # Filter by category
 
 # Get app details
 belt app get user/app             # View app info and schemas

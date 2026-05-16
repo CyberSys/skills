@@ -41,7 +41,7 @@ belt app run infsh/kokoro-tts --input '{"text": "Hello, welcome to our product d
 ## Browse All Audio Apps
 
 ```bash
-belt app list --category audio
+belt app store --category audio
 ```
 
 ## Examples
@@ -188,7 +188,7 @@ npx skills add inference-sh/skills@speech-to-text
 npx skills add inference-sh/skills@ai-video-generation
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 
 ## Documentation
 

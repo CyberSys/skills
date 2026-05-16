@@ -40,8 +40,8 @@ belt app run openrouter/claude-sonnet-45 --input '{"prompt": "Explain quantum co
 ## Search LLM Apps
 
 ```bash
-belt app list --search "openrouter"
-belt app list --search "claude"
+belt app store search "openrouter"
+belt app store search "claude"
 ```
 
 ## Examples
@@ -125,7 +125,7 @@ npx skills add inference-sh/skills@ai-image-generation
 npx skills add inference-sh/skills@ai-video-generation
 ```
 
-Browse all apps: `belt app list`
+Browse all apps: `belt app store`
 
 ## Documentation
 

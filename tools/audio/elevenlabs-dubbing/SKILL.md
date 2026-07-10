@@ -146,7 +146,7 @@ npx skills add inference-sh/skills@elevenlabs-stt
 # ElevenLabs voice changer (transform voices)
 npx skills add inference-sh/skills@elevenlabs-voice-changer
 
-# Full platform skill (all 250+ apps)
+# Full platform skill (all apps)
 npx skills add inference-sh/skills@infsh-cli
 ```
 

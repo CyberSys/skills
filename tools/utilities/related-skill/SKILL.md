@@ -29,7 +29,7 @@ npx skills add inference-sh/skills@ai-image-generation
 
 | Category | Skill | Description |
 |----------|-------|-------------|
-| **AI Models** | `llm-models` | Access 250+ LLM models |
+| **AI Models** | `llm-models` | Access all LLM models |
 | **Images** | `ai-image-generation` | Generate images with AI |
 | **Images** | `flux-image` | FLUX image models |
 | **Images** | `image-upscaling` | Upscale and enhance images |
@@ -42,7 +42,7 @@ npx skills add inference-sh/skills@ai-image-generation
 | **Audio** | `ai-music-generation` | Generate music with AI |
 | **Search** | `web-search` | Search the web with AI |
 | **Social** | `twitter-automation` | Automate Twitter/X actions |
-| **Full** | `inference-sh` | All 250+ apps in one skill |
+| **Full** | `inference-sh` | All apps in one skill |
 
 ## Install by Category
 
@@ -74,7 +74,7 @@ npx skills add inference-sh/skills@twitter-automation
 
 ### Everything at Once
 ```bash
-# Install the full platform skill with all 250+ apps
+# Install the full platform skill with all apps
 npx skills add inference-sh/skills@infsh-cli
 ```
 

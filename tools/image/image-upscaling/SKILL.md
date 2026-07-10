@@ -58,7 +58,7 @@ belt app run falai/topaz-image-upscaler --input '{"image_url": "<url-from-step-1
 ## Related Skills
 
 ```bash
-# Full platform skill (all 250+ apps)
+# Full platform skill (all apps)
 npx skills add inference-sh/skills@infsh-cli
 
 # Image generation (generate then upscale)

@@ -117,7 +117,7 @@ npx skills add inference-sh/skills@elevenlabs-stt
 # ElevenLabs TTS (reverse direction)
 npx skills add inference-sh/skills@elevenlabs-tts
 
-# Full platform skill (all 250+ apps)
+# Full platform skill (all apps)
 npx skills add inference-sh/skills@infsh-cli
 
 # Text-to-speech (reverse direction)

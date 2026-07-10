@@ -112,7 +112,7 @@ belt app run openrouter/claude-sonnet-45 --input input.json
 ## Related Skills
 
 ```bash
-# Full platform skill (all 250+ apps)
+# Full platform skill (all apps)
 npx skills add inference-sh/skills@infsh-cli
 
 # Web search (combine with LLMs for RAG)

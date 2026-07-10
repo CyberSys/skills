@@ -192,7 +192,7 @@ npx skills add inference-sh/skills@elevenlabs-sound-effects
 # All TTS models (Kokoro, DIA, Chatterbox, Inworld TTS, and more)
 npx skills add inference-sh/skills@text-to-speech
 
-# Full platform skill (all 250+ apps)
+# Full platform skill (all apps)
 npx skills add inference-sh/skills@infsh-cli
 ```
 

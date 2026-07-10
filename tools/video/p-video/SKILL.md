@@ -125,7 +125,7 @@ belt app list --namespace pruna
 ## Related Skills
 
 ```bash
-# Full platform skill (all 250+ apps)
+# Full platform skill (all apps)
 npx skills add inference-sh/skills@infsh-cli
 
 # All video generation models

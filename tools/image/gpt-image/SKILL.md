@@ -1,6 +1,6 @@
 ---
 name: gpt-image
-description: "Generate and edit images with OpenAI GPT-Image-2 via inference.sh CLI. Models: GPT-Image-2. Capabilities: text-to-image, image editing, inpainting, mask-based editing, multi-image reference, batch generation. Use for: product mockups, marketing visuals, image editing, concept art, inpainting, photo manipulation. Triggers: gpt image, gpt-image-2, openai image, chatgpt image, dall-e, dalle, openai image generation, gpt image edit, gpt inpainting, openai dall-e, gpt 4o image"
+description: "Generate and edit images with OpenAI GPT-Image-2 via inference.sh CLI. Models: GPT-Image-2. Capabilities: text-to-image, image editing, inpainting, mask-based editing, multi-image reference, batch generation, transparent backgrounds. Use for: product mockups, marketing visuals, image editing, concept art, inpainting, photo manipulation. Triggers: gpt image, gpt-image-2, openai image, chatgpt image, dall-e, dalle, openai image generation, gpt image edit, gpt inpainting, openai dall-e, gpt 4o image, transparent background, transparent png, remove background"
 allowed-tools: Bash(belt *)
 ---
 
@@ -32,6 +32,7 @@ GPT-Image-2 supports text-to-image generation, image editing with reference imag
 | Inpainting | Mask-based editing of specific regions |
 | Batch Generation | Generate up to 10 images at once |
 | Multiple Formats | PNG, JPEG, WebP output |
+| Transparent Background | Alpha-channel PNG/WebP output for stickers, icons, product cutouts |
 | Flexible Resolution | Any size in 32px increments (256–4096) |
 
 ## Examples
@@ -83,6 +84,17 @@ belt app run openai/gpt-image-2 --input '{
 }'
 ```
 
+### Transparent Background
+
+Prompt for an isolated subject — describing a scene or backdrop makes the model draw one. Requires `png` (default) or `webp` output.
+
+```bash
+belt app run openai/gpt-image-2 --input '{
+  "prompt": "a single red apple with a green leaf, isolated subject",
+  "background": "transparent"
+}'
+```
+
 ### Custom Resolution
 
 ```bash
@@ -126,6 +138,7 @@ Larger resolutions cost more. See `belt app get openai/gpt-image-2` for full pri
 | `height` | integer | - | Output height (256–4096, multiples of 32) |
 | `output_format` | string | png | png, jpeg, or webp |
 | `output_compression` | integer | - | Compression level for jpeg/webp (0–100) |
+| `background` | string | auto | auto, transparent, or opaque (transparent needs png/webp) |
 
 ## Related Skills
 

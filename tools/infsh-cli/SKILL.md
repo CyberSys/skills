@@ -19,7 +19,7 @@ curl -fsSL https://cli.inference.sh | sh
 belt login
 ```
 
-Agents / non-interactive shells: `belt login --key <api-key>`, or set `INFSH_API_KEY` (read on every command, no login needed).
+Agents / non-interactive shells: `printf %s "$KEY" | belt login --key-stdin`, or set `INFERENCE_API_KEY` (read on every command, no login needed; older belt versions read `INFSH_API_KEY`, now deprecated).
 Without a TTY, `belt login` prints a URL; the browser then shows a claim code. Run `belt login --code <code>` on the same machine within 5 minutes.
 
 > **What does the installer do?** The [install script](https://cli.inference.sh) detects your OS and architecture, downloads the correct binary from `dist.inference.sh`, verifies its SHA-256 checksum, and places it in your PATH. That's it — no elevated permissions, no background processes, no telemetry. If you have [cosign](https://docs.sigstore.dev/cosign/system_config/installation/) installed, the installer also verifies the Sigstore signature automatically.

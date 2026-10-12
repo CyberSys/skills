@@ -76,7 +76,8 @@ curl -fsSL https://cli.inference.sh | sh
 
 | Variable | Description |
 |----------|-------------|
-| `INFSH_API_KEY` | API key (overrides config) |
+| `INFERENCE_API_KEY` | API key (overrides config); same variable the SDKs read |
+| `INFSH_API_KEY` | Deprecated fallback for `INFERENCE_API_KEY` (older belt versions read only this) |
 
 ## Shell Completions
 

@@ -114,13 +114,13 @@ belt app credentials list
 #### OAuth Credentials
 
 ```python
-import os, json
+import os
 
 class App(BaseApp):
     async def setup(self, config):
-        creds_json = os.environ.get("GOOGLE_OAUTH_CREDENTIALS")
-        if creds_json:
-            self.credentials = json.loads(creds_json)
+        # The platform refreshes the token before each run; the app never sees a refresh token.
+        self.token = os.environ["GOOGLE_OAUTH_ACCESS_TOKEN"]
+        self.expires_at = os.environ.get("GOOGLE_OAUTH_TOKEN_EXPIRES_AT")  # RFC 3339
 ```
 
 #### Service Account

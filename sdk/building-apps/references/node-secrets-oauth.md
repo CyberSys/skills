@@ -120,10 +120,9 @@ belt app credentials list
 ```javascript
 export class App {
   async setup(config) {
-    const credsJson = process.env.GOOGLE_OAUTH_CREDENTIALS;
-    if (credsJson) {
-      this.credentials = JSON.parse(credsJson);
-    }
+    // The platform refreshes the token before each run; the app never sees a refresh token.
+    this.token = process.env.GOOGLE_OAUTH_ACCESS_TOKEN;
+    this.expiresAt = process.env.GOOGLE_OAUTH_TOKEN_EXPIRES_AT; // RFC 3339
   }
 }
 ```
